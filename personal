@@ -1,0 +1,7 @@
+
+openssl sha384 -binary -out firmware/NEWBS53MASTER.bin.sig firmware/NEWBS53MASTER.bin
+printf "%08x" `cat firmware/NEWBS53MASTER.bin | wc -c`| xxd -r -p >>firmware/NEWBS53MASTER.bin.sig
+cd firmware
+cp NEWBS53MASTER.bin /media/sf_GUEST/NEWBS53MASTER/
+cp NEWBS53MASTER.bin.sig /media/sf_GUEST/NEWBS53MASTER/
+cd ..
